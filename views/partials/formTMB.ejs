@@ -1,0 +1,20 @@
+<div class="container text-center">
+    <div class="row d-flex justify-content-center">
+        <h1>Calcular taxa metabólica basal</h1>
+        <form action="/calcular" method="post">
+            <label for="peso">Peso:</label><br>
+                <input type="number" name="peso" required><br><br>
+            <label for="altura">Altura:</label><br>
+                <input type="number" name="altura" required><br><br>
+            <label for="idade">Idade:</label><br>
+                <input type="number" name="idade" required><br><br>
+            <%- include('selectTMB.ejs') %>
+            <button type="submit" class="btn btn-success">CONSULTAR</button>
+        </form>
+        <div class="m-4">
+            <% if (typeof resultado != 'undefined') { %>
+                <%= resultado %>
+            <% } %>
+        </div>
+    </div>
+</div>
